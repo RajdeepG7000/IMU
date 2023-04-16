@@ -15,10 +15,10 @@ while not rospy.is_shutdown():
     # fill in the message fields with some dummy data
     msg.header.stamp = rospy.Time.now()
     msg.header.frame_id = "base_link"
-    msg.orientation.x = 0.0
-    msg.orientation.y = 0.0
-    msg.orientation.z = 0.0
-    msg.orientation.w = 1.0
+    msg.orientation.x = math.sin(3t)
+    msg.orientation.y = math.cos(t)
+    msg.orientation.z = math.sin(2t)
+    msg.orientation.w = math.cos(2t)
     msg.orientation_covariance[0] = -1 # no orientation estimate
     msg.angular_velocity.x = 6 + 2*math.sin(t)# rad/s
     msg.angular_velocity.y = 2 + math.sin(t+((math.pi)/2)) # rad/s
